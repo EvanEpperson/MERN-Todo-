@@ -2,14 +2,17 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const app = express();
-const port = 4000;
+const port = 4001;
 
 const ObjectId = require("mongoose").Types.ObjectId;
 
-mongoose.connect("mongodb://localhost/todo", {
-  useUnifiedTopology: true,
-  useNewUrlParser: true,
-});
+mongoose.connect(
+  "mongodb+srv://EppersonEvan:SEIRMando@cluster0.4elie.mongodb.net/todo?retryWrites=true&w=majority",
+  {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+  }
+);
 
 const userSchema = new mongoose.Schema({
   username: String,
